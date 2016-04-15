@@ -1,0 +1,29 @@
+<div class="container" ng-controller="storeFrontController">
+  <div class="row">
+    <div class="col-xs-3" ng-repeat="product in products()">
+      <div class="thumbnail products__container">
+        <img ng-src="{{ product.image }}" />
+        <div class="caption">
+          <h1>{{ product.name }}</h1>
+          <p>
+            {{ product.description }}
+          </p>
+          <a href="#" class="btn btn-primary" ng-click="addToCart(product)">Add to cart</a>
+          <a href="#" class="btn"> {{ product.price }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div> -->

@@ -1,3 +1,8 @@
 .grid-image {
   height: 300px;
 }
+
+.products__container {
+  height: 30rem;
+  overflow-y: scroll;
+}

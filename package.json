@@ -1,0 +1,26 @@
+{
+  "name": "ng-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "eslint-config-airbnb-es5": "^1.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reset": "git fetch venoma333 && git reset --hard venoma333/master",
+    "start": "webpack-dev-server --content-base public",
+    "push": "git add -A && git commit -m clipush && git push origin master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/venoma333/AngularProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/venoma333/AngularProject/issues"
+  },
+  "homepage": "https://github.com/venoma333/AngularProject#readme"
+}

@@ -1,0 +1,9 @@
+<div class="container" ng-controller="cartController">
+  <div class="well" ng-repeat="product in products()">
+    <div class="media-left">
+      <img ng-src="{{ product.image }}" />
+    </div>
+    <h1>{{ product.name }}</h1>
+    <h5>{{ product.description }}</h5>
+  </div>
+</div>

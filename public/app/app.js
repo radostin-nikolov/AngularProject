@@ -1,41 +1,25 @@
-angular.module('myApp', []);
-
-angular.module('myApp')
-.controller('homeController', function() {})
-.directive('movieSearch', function($http) {
-  var directive = {
-    restrict: 'E',
-    link: link,
-    templateUrl: 'app/movie-search/movieSearch.html'
-  }
-
-  return directive;
-
-  function link(scope) {
-    scope.submitHandler = function(query) {
-      $http.get('http://www.omdbapi.com/?s=' + query)
-      .then(function(response) {
-        console.log(response.data);
-        scope.results = response.data.Search;
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-    }
-  }
-})
-.directive('loginForm', function() {
-  var directive = {
-    restrict: 'E',
-    link: link,
-    templateUrl: 'app/login-form/loginForm.html'
-  };
-
-  return directive;
-
-  function link(scope) {
-    scope.submitHandler = function() {
-      console.log(scope.user);
-    }
-  }
+angular.module('myApp', [
+  'ngAnimate',
+  'ui.bootstrap',
+  'ui.router'
+])
+.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise("/home/store");
+  $stateProvider
+    .state('home', {
+      url: '/home',
+      templateUrl: 'app/home/home.html'
+    })
+    .state('home.store', {
+      url: '/store',
+      templateUrl: 'app/store-front/storeFront.html'
+    })
+    .state('about', {
+      url: '/about',
+      templateUrl: 'app/about/about.html'
+    })
+    .state('cart', {
+      url: '/cart',
+      templateUrl: 'app/cart/cart.html'
+    })
 });
